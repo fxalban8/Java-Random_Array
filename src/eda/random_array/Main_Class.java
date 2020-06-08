@@ -17,7 +17,7 @@ public class Main_Class {
 		max=sc.nextInt();
 	    for (int i = 0; i < arr.length; i++) {
 	    	  x=rd.nextInt(); // storing random integers
-	    	  if(verifyingInterval(x,min,max)) {
+	    	  if(verifyingInterval(x,min,max)&&verifyingNOTRepetition(x,arr)) {
 	    		  arr[i] =x;
 	    		  System.out.println(arr[i]); // printing each array element
 	    	  }else {
@@ -33,5 +33,16 @@ public class Main_Class {
 public static boolean verifyingInterval(int x, int min, int max) {
 	return min<=x && x<=max;
 }
+public static boolean verifyingNOTRepetition(int x, int array[]) {
+	boolean answ=true;
+	for(int i=0;i<array.length;i++) {
+		if(x==array[i]) {
+			answ=false;
+			break;
+		}
+	}
+	return answ;
+}
+	
 }
 
